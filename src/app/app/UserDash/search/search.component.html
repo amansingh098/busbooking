@@ -1,0 +1,166 @@
+<div class="grid-container">
+  <ng-container *ngFor="let bus of busesWithRoutes">
+    <div class="boarding-pass" (click)="selectBus(bus)">
+      <header>
+        <svg class="logo">
+          <use xlink:href="#alitalia"></use>
+        </svg>
+        <div class="flight">
+          <small>Bus Name</small>
+          <strong>{{ bus.busName }}</strong>
+        </div>
+      </header>
+      <section class="cities">
+        <div class="city">
+          <small>Source</small>
+          <strong>{{ bus.source }}</strong>
+        </div>
+        <div class="city">
+          <small>Destination</small>
+          <strong>{{ bus.destination }}</strong>
+        </div>
+        <svg class="airplane">
+          <use xlink:href="#airplane"></use>
+        </svg>
+      </section>
+      <section class="infos">
+        <div class="box">
+          <small>Bus Number</small>
+          <strong><em>{{ bus.busNumber }}</em></strong>
+        </div>
+        <div class="box">
+          <small>Route ID</small>
+          <strong><em>{{ bus.routeId }}</em></strong>
+        </div>
+        <div class="box">
+          <small>Boarding</small>
+          <strong>{{ bus.boarding }}</strong>
+        </div>
+        <div class="box">
+          <small>Departure</small>
+          <strong>{{ bus.departure }}</strong>
+        </div>
+        <div class="box">
+          <small>Duration</small>
+          <strong>{{ bus.duration }}</strong>
+        </div>
+        <div class="box">
+          <small>Arrival</small>
+          <strong>{{ bus.arrival }}</strong>
+        </div>
+      </section>
+    </div>
+  </ng-container>
+</div>
+
+<div *ngIf="selectedBus" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <h2>Choose Seat for {{ selectedBus.busName }}</h2>
+    <div class="bus-details">
+      <p><strong>Bus Name:</strong> {{ selectedBus.busName }}</p>
+    </div>
+    <label>Choose Seat</label>
+    <div class="bus seat2-2 border-0 p-0">
+      <div class="seat-row">
+        <ol class="seats">
+          <li class="seat" *ngFor="let seat of allSeats.slice(0, 4)">
+            <input 
+              role="input-passenger-seat" 
+              name="seat" 
+              [id]="'seat-radio-' + seat" 
+              [value]="seat" 
+              type="radio" 
+              [disabled]="bookedSeats.includes(seat)" 
+              (change)="selectSeat(seat)">
+            <label 
+              [for]="'seat-radio-' + seat" 
+              [ngClass]="{
+                'available-seat': availableSeats.includes(seat),
+                'booked-seat': bookedSeats.includes(seat),
+                'chosen-seat': selectedSeat === seat
+              }">
+              {{ seat }}
+            </label>
+          </li>
+        </ol>
+      </div>
+      <div class="seat-row">
+        <ol class="seats">
+          <li class="seat" *ngFor="let seat of allSeats.slice(4, 8)">
+            <input 
+              role="input-passenger-seat" 
+              name="seat" 
+              [id]="'seat-radio-' + seat" 
+              [value]="seat" 
+              type="radio" 
+              [disabled]="bookedSeats.includes(seat)" 
+              (change)="selectSeat(seat)">
+            <label 
+              [for]="'seat-radio-' + seat" 
+              [ngClass]="{
+                'available-seat': availableSeats.includes(seat),
+                'booked-seat': bookedSeats.includes(seat),
+                'chosen-seat': selectedSeat === seat
+              }">
+              {{ seat }}
+            </label>
+          </li>
+        </ol>
+      </div>
+      <div class="seat-row">
+        <ol class="seats">
+          <li class="seat" *ngFor="let seat of allSeats.slice(8, 12)">
+            <input 
+              role="input-passenger-seat" 
+              name="seat" 
+              [id]="'seat-radio-' + seat" 
+              [value]="seat" 
+              type="radio" 
+              [disabled]="bookedSeats.includes(seat)" 
+              (change)="selectSeat(seat)">
+            <label 
+              [for]="'seat-radio-' + seat" 
+              [ngClass]="{
+                'available-seat': availableSeats.includes(seat),
+                'booked-seat': bookedSeats.includes(seat),
+                'chosen-seat': selectedSeat === seat
+              }">
+              {{ seat }}
+            </label>
+          </li>
+        </ol>
+      </div>
+      <div class="seat-row">
+        <ol class="seats">
+          <li class="seat" *ngFor="let seat of allSeats.slice(12)">
+            <input 
+              role="input-passenger-seat" 
+              name="seat" 
+              [id]="'seat-radio-' + seat" 
+              [value]="seat" 
+              type="radio" 
+              [disabled]="bookedSeats.includes(seat)" 
+              (change)="selectSeat(seat)">
+            <label 
+              [for]="'seat-radio-' + seat" 
+              [ngClass]="{
+                'available-seat': availableSeats.includes(seat),
+                'booked-seat': bookedSeats.includes(seat),
+                'chosen-seat': selectedSeat === seat
+              }">
+              {{ seat }}
+            </label>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <div class="text-left mt-2">
+      <button class="btn btn-primary btn-xs mb-2">Available</button>
+      <button class="btn btn-success btn-xs mb-2">Chosen</button>
+      <button class="btn btn-danger btn-xs mb-2">Booked</button>
+      <a routerLink="chatuser"><button class="btn btn-success btn-xs mb-2">Chat</button></a>
+    </div>
+    <button class="btn btn-primary btn-xs mb-2" (click)="bookSeat()">Book Seat</button>
+  </div>
+</div>

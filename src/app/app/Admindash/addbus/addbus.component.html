@@ -1,0 +1,116 @@
+<div class="dashboard-container">
+    <header>
+      <h2>Manage Bus</h2>
+    </header>
+  
+    <div class="grid-container">
+      <!-- Top Row: Add, Update, Delete -->
+      <div class="grid-item">
+        <div class="form-container">
+          <h3>Add Bus</h3>
+          <form>
+            <div class="form-group">
+              <label for="busId">Bus ID</label>
+              <input type="number" class="form-control" id="busId" [(ngModel)]="bus.busId" name="busId" required>
+            </div>
+            <div class="form-group">
+              <label for="busName">Bus Name</label>
+              <input type="text" class="form-control" id="busName" [(ngModel)]="bus.busName" name="busName" required>
+            </div>
+            <div class="form-group">
+              <label for="busNumber">Bus Number</label>
+              <input type="text" class="form-control" id="busNumber" [(ngModel)]="bus.busNumber" name="busNumber" required>
+            </div>
+            <div class="form-group">
+              <label for="routeId">Route ID</label>
+              <input type="number" class="form-control" id="routeId" [(ngModel)]="bus.routeId" name="routeId" required>
+            </div>
+            <button type="button" class="btn btn-primary" (click)="addBus()">Add Bus</button>
+          </form>
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="form-container">
+          <h3>Update Bus</h3>
+          <form>
+            <div class="form-group">
+              <label for="busId">Bus ID</label>
+              <input type="number" class="form-control" id="busId" [(ngModel)]="bus.busId" name="busId" required>
+            </div>
+            <div class="form-group">
+              <label for="busName">Bus Name</label>
+              <input type="text" class="form-control" id="busName" [(ngModel)]="bus.busName" name="busName" required>
+            </div>
+            <div class="form-group">
+              <label for="busNumber">Bus Number</label>
+              <input type="text" class="form-control" id="busNumber" [(ngModel)]="bus.busNumber" name="busNumber" required>
+            </div>
+            <div class="form-group">
+              <label for="routeId">Route ID</label>
+              <input type="number" class="form-control" id="routeId" [(ngModel)]="bus.routeId" name="routeId" required>
+            </div>
+            <button type="button" class="btn btn-warning" (click)="updateBus()">Update Bus</button>
+          </form>
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="form-container">
+          <h3>Delete Bus</h3>
+          <form>
+            <div class="form-group">
+              <label for="busId">Bus ID</label>
+              <input type="number" class="form-control" id="busId" [(ngModel)]="bus.busId" name="busId" required>
+            </div>
+            <button type="button" class="btn btn-danger" (click)="deleteBus(bus.busId)">Delete Bus</button>
+          </form>
+        </div>
+      </div>
+  
+      <!-- Bottom Row: Search, Info, Show All -->
+      <div class="grid-item">
+        <div class="form-container">
+          <h3>Search Bus</h3>
+          <div class="search-container">
+            <input type="text" placeholder="Search by Bus ID" [(ngModel)]="searchTerm">
+            <button class="btn btn-secondary" (click)="searchBus()">Search</button>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="table-container">
+          <h3>Bus List</h3>
+          <div style="overflow-x:auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Bus ID</th>
+                  <th>Bus Name</th>
+                  <th>Bus Number</th>
+                  <th>Route ID</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let data of filteredBuses">
+                  <td>{{ data.busId }}</td>
+                  <td>{{ data.busName }}</td>
+                  <td>{{ data.busNumber }}</td>
+                  <td>{{ data.routeId }}</td>
+                  <td>
+                    <button class="btn btn-warning btn-sm" (click)="editBus(data)">Edit</button>
+                    <button class="btn btn-danger btn-sm" (click)="deleteBus(data.busId)">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="form-container">
+          <h3>Show All Buses</h3>
+          <button class="btn btn-info" (click)="fetchBuses()">Show All</button>
+        </div>
+      </div>
+    </div>
+  </div>

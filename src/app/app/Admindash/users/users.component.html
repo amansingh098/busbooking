@@ -1,0 +1,82 @@
+<div class="container">
+    <div class="users-container">
+      <h2>Users List</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>User ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Password</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.userId }}</td>
+            <td>{{ user.userName }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phone }}</td>
+            <td>{{ user.password }}</td>
+            <td><button (click)="viewBookings(user.userId)">View Bookings</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="admins-container">
+      <h2>Admin Details</h2>
+      <div class="grid-container">
+        <div class="grid-item">
+          <h3>All Admin IDs</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let admin of allAdminIds">
+                <td>{{ admin.userName }}</td>
+                <td>{{ admin.email }}</td>
+                <td>{{ admin.phoneNumber }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal for displaying bookings -->
+  <div *ngIf="selectedUserBookings !== null" class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <h2>Bookings for User ID: {{ selectedUserId }}</h2>
+      <div *ngIf="selectedUserBookings.length > 0">
+        <table>
+          <thead>
+            <tr>
+              <th>Booking ID</th>
+              <th>Date</th>
+              <th>Seat No</th>
+              <th>Bus ID</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let booking of selectedUserBookings">
+              <td>{{ booking.bookingId }}</td>
+              <td>{{ booking.date }}</td>
+              <td>{{ booking.seatNo }}</td>
+              <td>{{ booking.busId }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div *ngIf="selectedUserBookings.length === 0"  style="color: crimson;">
+        <p>No bookings found for this user.</p>
+      </div>
+    </div>
+  </div>

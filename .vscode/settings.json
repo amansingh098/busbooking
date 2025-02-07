@@ -1,0 +1,76 @@
+{
+    "folder-color.pathColors": [
+        {
+            "folderPath": "king\\src\\app\\Components\\landingpage\\landingpage.component.css\\",
+            "color": "foldercolorizer.color_ff00cc"
+        },
+        {
+            "folderPath": "king\\src\\app\\Components\\landingpage\\landingpage.component.html\\",
+            "color": "foldercolorizer.color_ff00cc"
+        },
+        {
+            "folderPath": "king\\src\\app\\Components\\landingpage\\landingpage.component.spec.ts\\",
+            "color": "foldercolorizer.color_ff00cc"
+        },
+        {
+            "folderPath": "king\\src\\app\\Components\\landingpage\\landingpage.component.ts\\",
+            "color": "foldercolorizer.color_ff00cc"
+        },
+        {
+            "folderPath": "king\\src\\app\\app\\Admindash\\admin\\",
+            "color": "foldercolorizer.color_990099"
+        },
+        {
+            "folderPath": "king\\src\\app\\app\\Admindash\\admin\\admin.component.css\\",
+            "color": "foldercolorizer.color_ffcc00"
+        },
+        {
+            "folderPath": "king\\src\\app\\app\\Admindash\\admin\\admin.component.html\\",
+            "color": "foldercolorizer.color_ffcc00"
+        },
+        {
+            "folderPath": "king\\src\\app\\app\\Admindash\\admin\\admin.component.spec.ts\\",
+            "color": "foldercolorizer.color_ffcc00"
+        },
+        {
+            "folderPath": "king\\src\\app\\app\\Admindash\\admin\\admin.component.ts\\",
+            "color": "foldercolorizer.color_ffcc00"
+        },
+        {
+            "folderPath": "king\\src\\app\\app\\Admindash\\navbar-admin\\",
+            "color": "foldercolorizer.color_990099"
+        },
+        {
+            "folderPath": "king\\src\\app\\app\\Admindash\\navbar-admin\\navbar-admin.component.css\\",
+            "color": "foldercolorizer.color_990099"
+        },
+        {
+            "folderPath": "king\\src\\app\\app\\Admindash\\navbar-admin\\navbar-admin.component.html\\",
+            "color": "foldercolorizer.color_990099"
+        },
+        {
+            "folderPath": "king\\src\\app\\app\\Admindash\\navbar-admin\\navbar-admin.component.spec.ts\\",
+            "color": "foldercolorizer.color_990099"
+        },
+        {
+            "folderPath": "king\\src\\app\\app\\Admindash\\navbar-admin\\navbar-admin.component.ts\\",
+            "color": "foldercolorizer.color_990099"
+        },
+        {
+            "folderPath": "king\\src\\app\\create-account\\create-account.component.css\\",
+            "color": "foldercolorizer.color_ccccff"
+        },
+        {
+            "folderPath": "king\\src\\app\\create-account\\create-account.component.html\\",
+            "color": "foldercolorizer.color_ccccff"
+        },
+        {
+            "folderPath": "king\\src\\app\\create-account\\create-account.component.spec.ts\\",
+            "color": "foldercolorizer.color_ccccff"
+        },
+        {
+            "folderPath": "king\\src\\app\\create-account\\create-account.component.ts\\",
+            "color": "foldercolorizer.color_ccccff"
+        }
+    ]
+}

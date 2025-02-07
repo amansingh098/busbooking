@@ -1,0 +1,100 @@
+/* chat-container */
+.chat-container {
+    display: flex;
+    flex-direction: column; /* Messages stack vertically */
+    height: 400px; /* Adjust as needed */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 10px;
+    background-color: #e0e0e0; /* WhatsApp-like background color */
+  }
+  
+  /* message */
+  .message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px; /* Rounded corners */
+    max-width: 70%; /* Adjust as needed */
+    clear: both; /* Important for positioning */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-size: 16px; /* WhatsApp-like font size */
+    word-wrap: break-word; /* Prevent long words from overflowing */
+  }
+  
+  /* user-message */
+  .admin-message {
+    background-color: #dcf8c6; /* WhatsApp-like user message color */
+    align-self: flex-end; /* Align to the right */
+    margin-left: 30%; /* Push from left */
+  
+  }
+  
+  /* admin-message */
+  .user-message {
+    background-color: #ffffff; /* WhatsApp-like admin message color */
+    align-self: flex-start; /* Align to the left */
+    margin-right: 30%; /* Push from right */
+  
+  }
+  
+  /* message content (p tag) */
+  .message p {
+    margin: 0; /* Remove default p tag margins */
+  }
+  
+  /* timestamp */
+  .message span {
+    font-size: 12px; /* Smaller timestamp font */
+    color: #777;
+    display: block; /* Timestamp below message */
+    margin-top: 5px; /* Space between message and timestamp */
+    text-align: right; /* Align timestamp to the right */
+  }
+  
+  /* input area */
+  .input-area {
+    display: flex;
+    padding: 10px;
+    background-color: #f0f0f0; /* Light gray background for input area */
+    border-top: 1px solid #ddd; /* Separator line */
+  }
+  
+  .input-area input[type="text"] {
+    flex-grow: 1; /* Input takes up available space */
+    padding: 10px;
+    border: none;
+    border-radius: 20px; /* Rounded input */
+    background-color: #fff; /* White input background */
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Inner shadow */
+    font-size: 16px;
+    outline: none; /* Remove focus outline */
+  }
+  
+  .input-area button {
+    padding: 10px 20px;
+    background-color: #008069; /* WhatsApp-like send button color */
+    color: white;
+    border: none;
+    border-radius: 20px; /* Rounded button */
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 16px;
+    outline: none; /* Remove focus outline */
+  }
+  
+  /* Hide scrollbar (optional - can be a bit tricky cross-browser) */
+  .chat-container::-webkit-scrollbar {
+    width: 0px; /* Or a small value for a thin scrollbar */
+  }
+  
+  /* Optional: Style the scrollbar (more advanced) */
+  .chat-container::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  
+  .chat-container::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  .chat-container::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }

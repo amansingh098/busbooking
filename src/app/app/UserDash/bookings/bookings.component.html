@@ -1,0 +1,44 @@
+<div class="ticket-container">
+  <div *ngFor="let item of booking" class="ticket">
+    <div class="stub">
+      <div class="top">
+        <span class="admit">Admit</span>
+        <span class="line"></span>
+        <span class="num">
+          Booking ID
+          <span>{{ item.bookingId }}</span>
+        </span>
+      </div>
+      <div class="number">{{ item.bookingId }}</div>
+      
+    </div>
+    <div class="check">
+      <div class="big">
+        Booking <br> Confirmed
+      </div>
+     
+      <div class="info">
+        <section>
+          <div class="title">Date</div>
+          <div>{{ item.date | date: 'shortDate' }}</div> <!-- Shortened date format -->
+        </section>
+        <section>
+          <div class="title">Seat No</div>
+          <div>{{ item.seatNo }}</div>
+        </section>
+        <section>
+          <div class="title">User ID</div>
+          <div>{{ item.userId }}</div>
+        </section>
+        <section>
+          <div class="title">Bus ID</div>
+          <div>{{ item.busId }}</div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!booking">
+  <p>No booking details available.</p>
+</div>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In Page</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body with Background Image */
+    body {
+      font-family: Arial, sans-serif;
+     
+      background-size: cover; /* Ensures the image covers the entire background */
+      background-position: center; /* Centers the image */
+      background-repeat: no-repeat; /* Prevents the image from repeating */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      backdrop-filter: blur(8px); /* Adds a blur effect to the background */
+    }
+
+    /* Sign In Container */
+    .signin-container {
+      background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      overflow: hidden; /* Ensures the image fits within the rounded corners */
+    }
+
+    /* Image at the Top */
+    .signin-container img {
+      width: 100%; /* Full width of the container */
+      height: 150px; /* Adjust height as needed */
+      object-fit: cover; /* Ensures the image covers the area without distortion */
+      display: block; /* Removes extra space below the image */
+    }
+
+    /* Title */
+    .signin-container h1 {
+      font-size: 24px;
+      margin: 20px 0;
+      color: #333;
+    }
+
+    /* Input Fields */
+    .input-group {
+      margin-bottom: 20px;
+      text-align: left;
+      padding: 0 20px; /* Adds padding to align with the container */
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .input-group input:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    /* Sign In Button */
+    .signin-btn {
+      width: calc(100% - 40px); /* Full width minus padding */
+      margin: 0 20px 20px; /* Adds margin to align with the container */
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .signin-btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Remember Me and Forgot Password */
+    .options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 20px 20px; /* Adds margin to align with the container */
+    }
+
+    .options label {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .options a {
+      font-size: 14px;
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .options a:hover {
+      text-decoration: underline;
+    }
+
+    /* Sign Up Link */
+    .signup-link {
+      margin: 20px 0;
+      font-size: 14px;
+      color: #555;
+      padding: 0 20px; /* Adds padding to align with the container */
+    }
+
+    .signup-link a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sign In Container -->
+  <div class="signin-container">
+    <!-- Image at the Top -->
+    <img src="https://img.freepik.com/premium-photo/bus-crossing-desert-synthwave-80s-ai-generate_250484-12372.jpg?w=2000" alt="Banner Image"> <!-- Replace with your image path -->
+
+    <!-- Title -->
+    <h1>Login</h1>
+
+    <!-- Username Input -->
+    <div class="input-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Enter your username">
+    </div>
+
+    <!-- Password Input -->
+    <div class="input-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter your password">
+    </div>
+
+    <!-- Sign In Button -->
+   <a routerLink="landing"> <button class="signin-btn">Login</button></a>
+
+    <!-- Remember Me and Forgot Password -->
+    <div class="options">
+      <label>
+        <input type="checkbox"> Remember Me
+      </label>
+      <a href="#">Forgot Password?</a>
+    </div>
+
+    <!-- Sign Up Link -->
+    <div class="signup-link">
+      Not a member? <a href="#">Sign Up</a>
+    </div>
+  </div>
+</body>
+</html>

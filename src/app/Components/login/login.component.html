@@ -1,0 +1,177 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In Page</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body with Background Image */
+    body {
+      font-family: 'Comic Sans MS', sans-serif;
+      /* background-image: url('https://th.bing.com/th/id/OIP.vHibsAXDGO183nWYsdEmfAHaEX?pid=ImgDet&w=178&h=104&c=7&dpr=1.5'); */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      backdrop-filter: blur(8px);
+    }
+
+    /* Sign In Container */
+    .signin-container {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* Image at the Top */
+    .signin-container img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Title */
+    .signin-container h1 {
+      font-size: 24px;
+      margin: 20px 0;
+      color: #333;
+    }
+
+    /* Input Fields */
+    .input-group {
+      margin-bottom: 20px;
+      text-align: left;
+      padding: 0 20px;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .input-group input:focus {
+      border-color: #ff6347;
+      box-shadow: 0 0 5px rgba(255, 99, 71, 0.5);
+    }
+
+    /* Sign In Button */
+    .signin-btn {
+      width: calc(100% - 40px);
+      margin: 0 20px 20px;
+      padding: 10px;
+      background-color: #ff6347;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .signin-btn:hover {
+      background-color: #e5533d;
+    }
+
+    /* Remember Me and Forgot Password */
+    .options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 20px 20px;
+    }
+
+    .options label {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .options a {
+      font-size: 14px;
+      color: #ff6347;
+      text-decoration: none;
+    }
+
+    .options a:hover {
+      text-decoration: underline;
+    }
+
+    /* Sign Up Link */
+    .signup-link {
+      margin: 20px 0;
+      font-size: 14px;
+      color: #555;
+      padding: 0 20px;
+    }
+
+    .signup-link a {
+      color: #ff6347;
+      text-decoration: none;
+    }
+
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sign In Container -->
+  <div class="signin-container">
+    <!-- Image at the Top -->
+    <img src="https://img.freepik.com/premium-photo/bus-crossing-desert-synthwave-80s-ai-generate_250484-12372.jpg?w=2000" alt="Banner Image">
+
+    <!-- Title -->
+    <h1>Login</h1>
+
+    <!-- Name Input -->
+    <div class="input-group">
+      <label for="Name">Name</label>
+      <input type="text" id="Name" [(ngModel)]="Name" name="Name" placeholder="Enter your Name" required>
+    </div>
+
+    <!-- Password Input -->
+    <div class="input-group">
+      <label for="Password">Password</label>
+      <input type="password" id="Password" [(ngModel)]="Password" name="Password" placeholder="Enter your password" required>
+    </div>
+
+    <!-- Sign In Button -->
+    <button class="signin-btn" (click)="onSubmit()">Login</button>
+
+    <!-- Remember Me and Forgot Password -->
+    <div class="options">
+      <label>
+        <input type="checkbox"> Remember Me
+      </label>
+      <a href="#">Forgot Password?</a>
+    </div>
+
+    <!-- Sign Up Link -->
+    <div class="signup-link">
+      Not a member? <a href="#">Sign Up</a>
+    </div>
+  </div>
+</body>

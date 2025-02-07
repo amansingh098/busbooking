@@ -1,0 +1,20 @@
+<div class="container bootstrap snippets bootdeys">
+    <div class="row">
+      <div *ngFor="let bus of buses" class="col-md-4 col-sm-6 content-card">
+        <div class="card-big-shadow">
+          <div class="card card-just-text" data-background="color" [attr.data-color]="getColor(bus.busId)" data-radius="none">
+            <div class="content">
+              <h6 class="category">Bus Information</h6>
+              <h4 class="title"><a href="#">{{ bus.busName }}</a></h4>
+              <p class="description">
+                <strong>Bus Name:</strong> {{ bus.busName }}<br>
+                <strong>Bus Number:</strong> {{ bus.busNumber }}<br>
+                <strong>Route ID:</strong> {{ bus.routeId }}<br>
+                <!-- Add more fields as needed -->
+              </p>
+            </div>
+          </div> <!-- end card -->
+        </div>
+      </div>
+    </div>
+  </div>
