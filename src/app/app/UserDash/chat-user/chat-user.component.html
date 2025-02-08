@@ -1,6 +1,6 @@
 <div class="chat-container">
     <div *ngFor="let msg of messages" [ngClass]="{'message': true, 'user-message': msg.sender === 'User', 'admin-message': msg.sender === 'Admin'}">
-    <Strong>User ID :<p>{{userId}}</p></Strong> <p>{{ msg.message }}</p>  <span>{{ msg.timestamp | date:'short' }}</span>
+   <p>{{ msg.message }}</p>  <span>{{ msg.timestamp | date:'short' }}</span>
     </div>
   </div>
   <div class="input-area">

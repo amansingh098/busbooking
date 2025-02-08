@@ -41,6 +41,7 @@ export const routes: Routes = [
   ]},
   { path: 'user', component: UserComponent, canActivate: [AuthGuard], children:[
     {path:'find',component:SearchComponent},
+    {path:'',component:SearchComponent},
     {path:'bookings',component:BookingsComponent},
     {
       path:'find/chatuser',component:ChatUserComponent

@@ -22,8 +22,17 @@ import { NgFor, NgForOf } from '@angular/common';
     routeId: 0
   };
 
+  busTime = {
+    busId: 0,
+    boarding: '',
+    departure: '',
+    duration: '',
+    arrival: ''
+  };
+
   private apiUrl = 'https://localhost:7219/api/Admin';
   private busApiUrl = 'https://localhost:7219/api/Bus';
+  private apiUrl2 = 'https://localhost:7219/api/All';
 
   constructor(private http: HttpClient) {}
 
@@ -37,9 +46,18 @@ import { NgFor, NgForOf } from '@angular/common';
       console.error('Error adding bus', error);
     });
   }
+  addBusTime() {
+    this.http.post<any>(`${this.apiUrl2}/AddBusTime`, this.busTime).subscribe(response => {
+      alert('Bus time added successfully');
+      console.log('Bus time added successfully', response);
+    }, error => {
+      alert('Error adding bus time');
+      console.error('Error adding bus time', error);
+    });
+  }
 
   updateBus() {
-    this.http.put<any>(`${this.apiUrl}/update-bus/${this.bus.busId}`, this.bus).subscribe(response => {
+    this.http.put<any>(`${this.apiUrl}/update-bus/`, this.bus).subscribe(response => {
       alert('Bus updated successfully');
       console.log('Bus updated successfully', response);
       this.fetchBuses();
@@ -90,5 +108,6 @@ import { NgFor, NgForOf } from '@angular/common';
 
   editBus(bus: any) {
     this.bus = { ...bus };
+    this.busTime.busId = bus.busId; // Update busTime with the busId
   }
 }

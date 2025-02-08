@@ -25,7 +25,7 @@ export class AddRoutesComponent {
   };
 
   private apiUrl = 'https://localhost:7219/api/Admin';
-  private routeApiUrl = 'https://localhost:7219/api/Bus/Route';
+  private routeApiUrl = 'https://localhost:7219/api/All';
 
   constructor(private http: HttpClient) {}
 
@@ -33,7 +33,7 @@ export class AddRoutesComponent {
     this.http.post<any>(`${this.apiUrl}/add-route`, this.route).subscribe(response => {
       alert('Route added successfully');
       console.log('Route added successfully', response);
-      this.searchRouteById();
+      this.fetchAllRoutes();
     }, error => {
       alert('Error adding route');
       console.error('Error adding route', error);
@@ -44,7 +44,7 @@ export class AddRoutesComponent {
     this.http.put<any>(`${this.apiUrl}/update-route/${this.route.routeId}`, this.route).subscribe(response => {
       alert('Route updated successfully');
       console.log('Route updated successfully', response);
-      this.searchRouteById();
+      this.fetchAllRoutes();
     }, error => {
       console.error('Error updating route', error);
       alert('Error updating route');
@@ -55,7 +55,7 @@ export class AddRoutesComponent {
     this.http.delete<any>(`${this.apiUrl}/delete-route/${routeId}`).subscribe(response => {
       alert('Route deleted successfully');
       console.log('Route deleted successfully', response);
-      this.searchRouteById();
+      this.fetchAllRoutes();
     }, error => {
       alert('Error deleting route');
       console.log('Error deleting route', error);
@@ -65,6 +65,10 @@ export class AddRoutesComponent {
   searchRouteById() {
     if (this.searchTerm) {
       this.http.get<any[]>(`${this.routeApiUrl}/${this.searchTerm}`).subscribe(response => {
+        console.log(response);
+        if(response.length == 0){
+          alert(`No Route Id found for ${this.searchTerm}`);
+        }
         this.filteredRoutes = response;
       }, error => {
         alert('Error searching route');
@@ -95,8 +99,17 @@ export class AddRoutesComponent {
     }
   }
 
+  fetchAllRoutes() {
+    this.http.get<any[]>(this.routeApiUrl).subscribe(response => {
+      this.filteredRoutes = response;
+    }, error => {
+      alert('Error fetching routes');
+      console.error('Error fetching routes', error);
+    });
+  }
+
   ngOnInit() {
-    this.searchRouteById();
+    this.fetchAllRoutes();
   }
 
   editRoute(route: any) {

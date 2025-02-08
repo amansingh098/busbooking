@@ -1,106 +1,106 @@
 <div class="dashboard-container">
-    <header>
-      <h2>Manage Routes</h2>
-    </header>
-  
-    <div class="grid-container">
-      <!-- Top Row: Add, Update, Delete -->
-      <div class="grid-item">
-        <div class="form-container add-card">
-          <h3>Add Route</h3>
-          <form>
-            <div class="form-group">
-              <label for="routeId">Route ID</label>
-              <input type="number" class="form-control" id="routeId" [(ngModel)]="route.routeId" name="routeId" required>
-            </div>
-            <div class="form-group">
-              <label for="source">Source</label>
-              <input type="text" class="form-control" id="source" [(ngModel)]="route.source" name="source" required>
-            </div>
-            <div class="form-group">
-              <label for="destination">Destination</label>
-              <input type="text" class="form-control" id="destination" [(ngModel)]="route.destination" name="destination" required>
-            </div>
-            <button type="button" class="btn btn-primary" (click)="addRoute()">Add Route</button>
-          </form>
-        </div>
-      </div>
-      <div class="grid-item">
-        <div class="form-container update-card">
-          <h3>Update Route</h3>
-          <form>
-            <div class="form-group">
-              <label for="routeId">Route ID</label>
-              <input type="number" class="form-control" id="routeId" [(ngModel)]="route.routeId" name="routeId" required>
-            </div>
-            <div class="form-group">
-              <label for="source">Source</label>
-              <input type="text" class="form-control" id="source" [(ngModel)]="route.source" name="source" required>
-            </div>
-            <div class="form-group">
-              <label for="destination">Destination</label>
-              <input type="text" class="form-control" id="destination" [(ngModel)]="route.destination" name="destination" required>
-            </div>
-            <button type="button" class="btn btn-warning" (click)="updateRoute()">Update Route</button>
-          </form>
-        </div>
-      </div>
-      <div class="grid-item">
-        <div class="form-container delete-card">
-          <h3>Delete Route</h3>
-          <form>
-            <div class="form-group">
-              <label for="routeId">Route ID</label>
-              <input type="number" class="form-control" id="routeId" [(ngModel)]="route.routeId" name="routeId" required>
-            </div>
-            <button type="button" class="btn btn-danger" (click)="deleteRoute(route.routeId)">Delete Route</button>
-          </form>
-        </div>
-      </div>
-  
-      <!-- Bottom Row: Search, Info, Show All -->
-      <div class="grid-item">
-        <div class="form-container search-card">
-          <h3>Search Route</h3>
-          <div class="search-container">
-            <input type="text" placeholder="Search by Route ID" [(ngModel)]="searchTerm">
-            <button class="btn btn-secondary" (click)="searchRouteById()">Search by ID</button>
+  <header>
+    <h2>Manage Routes</h2>
+  </header>
+
+  <div class="grid-container">
+    <!-- Top Row: Add, Update, Delete -->
+    <div class="grid-item">
+      <div class="form-container add-card">
+        <h3>Add Route</h3>
+        <form>
+          <div class="form-group">
+            <label for="routeId">Route ID</label>
+            <input type="number" class="form-control" id="routeId" [(ngModel)]="route.routeId" name="routeId" required>
           </div>
-          <div class="search-container">
-            <input type="text" placeholder="Source" [(ngModel)]="searchSource">
-            <input type="text" placeholder="Destination" [(ngModel)]="searchDestination">
-            <button class="btn btn-secondary" (click)="searchRouteByLocation()">Search by Location</button>
+          <div class="form-group">
+            <label for="source">Source</label>
+            <input type="text" class="form-control" id="source" [(ngModel)]="route.source" name="source" required>
           </div>
-        </div>
+          <div class="form-group">
+            <label for="destination">Destination</label>
+            <input type="text" class="form-control" id="destination" [(ngModel)]="route.destination" name="destination" required>
+          </div>
+          <button type="button" class="btn btn-primary" (click)="addRoute()">Add Route</button>
+        </form>
       </div>
-      <div class="grid-item">
-        <div class="table-container info-card">
-          <h3>Route List</h3>
-          <div style="overflow-x:auto;">
-            <table>
-              <thead>
-                <tr>
-                  <th>Route ID</th>
-                  <th>Source</th>
-                  <th>Destination</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let data of filteredRoutes">
-                  <td>{{data.routeId}}</td>
-                  <td>{{data.source}}</td>
-                  <td>{{data.destination}}</td>
-                  <td>
-                    <button class="btn btn-warning btn-sm" (click)="editRoute(data)">Edit</button>
-                    <button class="btn btn-danger btn-sm" (click)="deleteRoute(data.routeId)">Delete</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+    </div>
+    <div class="grid-item">
+      <div class="form-container update-card">
+        <h3>Update Route</h3>
+        <form>
+          <div class="form-group">
+            <label for="routeId">Route ID</label>
+            <input type="number" class="form-control" id="routeId" [(ngModel)]="route.routeId" name="routeId" required>
           </div>
+          <div class="form-group">
+            <label for="source">Source</label>
+            <input type="text" class="form-control" id="source" [(ngModel)]="route.source" name="source" required>
+          </div>
+          <div class="form-group">
+            <label for="destination">Destination</label>
+            <input type="text" class="form-control" id="destination" [(ngModel)]="route.destination" name="destination" required>
+          </div>
+          <button type="button" class="btn btn-warning" (click)="updateRoute()">Update Route</button>
+        </form>
+      </div>
+    </div>
+    <div class="grid-item">
+      <div class="form-container delete-card">
+        <h3>Delete Route</h3>
+        <form>
+          <div class="form-group">
+            <label for="routeId">Route ID</label>
+            <input type="number" class="form-control" id="routeId" [(ngModel)]="route.routeId" name="routeId" required>
+          </div>
+          <button type="button" class="btn btn-danger" (click)="deleteRoute(route.routeId)">Delete Route</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Bottom Row: Search, Info, Show All -->
+    <div class="grid-item">
+      <div class="form-container search-card">
+        <h3>Search Route</h3>
+        <div class="search-container">
+          <input type="text" placeholder="Search by Route ID" [(ngModel)]="searchTerm">
+          <button class="btn btn-secondary" (click)="searchRouteById()">Search by ID</button>
+        </div>
+        <div class="search-container">
+          <input type="text" placeholder="Source" [(ngModel)]="searchSource">
+          <input type="text" placeholder="Destination" [(ngModel)]="searchDestination">
+          <button class="btn btn-secondary" (click)="searchRouteByLocation()">Search by Location</button>
         </div>
       </div>
     </div>
+    <div class="grid-item">
+      <div class="table-container info-card">
+        <h3>Route List</h3>
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>Route ID</th>
+                <th>Source</th>
+                <th>Destination</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of filteredRoutes">
+                <td>{{data.routeId}}</td>
+                <td>{{data.source}}</td>
+                <td>{{data.destination}}</td>
+                <td>
+                  <button class="btn btn-warning btn-sm" (click)="editRoute(data)">Edit</button>
+                  <button class="btn btn-danger btn-sm" (click)="deleteRoute(data.routeId)">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <button class="btn btn-info" (click)="fetchAllRoutes()">Show All Routes</button>
+      </div>
+    </div>
   </div>
-  
+</div>

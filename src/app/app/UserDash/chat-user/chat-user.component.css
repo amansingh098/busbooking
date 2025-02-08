@@ -5,8 +5,8 @@
     height: 400px; /* Adjust as needed */
     overflow-y: auto; /* Enable vertical scrolling */
     padding: 10px;
-    background-color: #e0e0e0; 
-    /* WhatsApp-like background color */
+    background-color: #d9dad8;
+    background-size: cover;
   }
   
   /* message */
