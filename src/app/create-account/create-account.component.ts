@@ -4,17 +4,17 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../auth.service';
 import { User } from '../../app/Models/user.model';
-import { Router } from '@angular/router'; // Import the Router
+import { Router, RouterLink } from '@angular/router'; // Import the Router
 
 @Component({
   selector: 'app-create-account',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule,RouterLink],
   templateUrl: './create-account.component.html',
   styleUrls: ['./create-account.component.css']
 })
 export class CreateAccountComponent {
-  user: User = {
+  user :User= {
     name: '',
     email: '',
     phoneNumber: '',

@@ -71,6 +71,14 @@
         {
             "folderPath": "king\\src\\app\\create-account\\create-account.component.ts\\",
             "color": "foldercolorizer.color_ccccff"
+        },
+        {
+            "folderPath": "king\\src\\app\\app\\Admindash\\",
+            "color": "foldercolorizer.color_ffccff"
+        },
+        {
+            "folderPath": "king\\src\\app\\app\\UserDash\\",
+            "color": "foldercolorizer.color_00cccc"
         }
     ]
 }

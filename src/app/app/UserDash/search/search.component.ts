@@ -3,11 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { BusDTO } from './BusDTO';
 import { RouterLink } from '@angular/router';
+import { FormsModule, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-search',
   standalone: true,
-  imports: [CommonModule, NgFor, NgClass, NgIf, NgClass, NgStyle,RouterLink],
+  imports: [CommonModule, NgFor, NgClass, NgIf, NgClass, NgStyle,RouterLink,FormsModule],
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
@@ -17,7 +18,7 @@ export class SearchComponent implements OnInit {
   selectedSeat: string | null = null;
   availableSeats: string[] = [];
   bookedSeats: string[] = [];
-  allSeats: string[] = []; // Add this line
+  allSeats: string[] = []; 
 
   constructor(private http: HttpClient) {}
 
@@ -27,8 +28,8 @@ export class SearchComponent implements OnInit {
 
   getBusesWithRoutes(): void {
     this.http.get<any>('https://localhost:7219/api/All/BusesWithRoutes').subscribe(data => {
-      console.log('Buses with Routes:', data); // Debugging statement
-      this.busesWithRoutes = this.transformData(data.$values || data); // Ensure it's an array and transform data
+      console.log('Buses with Routes:', data); 
+      this.busesWithRoutes = this.transformData(data.$values || data); 
     });
   }
 
@@ -97,6 +98,8 @@ export class SearchComponent implements OnInit {
 
       this.http.post('https://localhost:7219/api/Bus/book-Bus', bookingData).subscribe(response => {
         console.log('Booking response:', response);
+     
+        alert(`the seat has been booked ${this.selectedSeat}`);
         this.closeModal();
       }, error => {
         console.error('Booking error:', error);
@@ -105,4 +108,6 @@ export class SearchComponent implements OnInit {
       console.log(`Booking seat ${this.selectedSeat} for bus ${this.selectedBus.busName}`);
     }
   }
+
+  
 }

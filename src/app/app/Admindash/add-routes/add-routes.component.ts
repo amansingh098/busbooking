@@ -27,7 +27,7 @@ export class AddRoutesComponent {
   private apiUrl = 'https://localhost:7219/api/Admin';
   private routeApiUrl = 'https://localhost:7219/api/All';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   addRoute() {
     this.http.post<any>(`${this.apiUrl}/add-route`, this.route).subscribe(response => {
@@ -62,14 +62,12 @@ export class AddRoutesComponent {
     });
   }
 
-  searchRouteById() {
-    if (this.searchTerm) {
-      this.http.get<any[]>(`${this.routeApiUrl}/${this.searchTerm}`).subscribe(response => {
+  searchRouteById(routeId: number) {
+    if (this.route.routeId) {
+      this.http.get<any[]>(`https://localhost:7219/api/Bus/Route/${this.route.routeId}`).subscribe(response => {
         console.log(response);
-        if(response.length == 0){
-          alert(`No Route Id found for ${this.searchTerm}`);
-        }
-        this.filteredRoutes = response;
+        this.filteredRoutes = response
+
       }, error => {
         alert('Error searching route');
         console.error('Error searching route', error);
@@ -82,7 +80,7 @@ export class AddRoutesComponent {
 
   searchRouteByLocation() {
     if (this.searchSource && this.searchDestination) {
-      const url = `${this.routeApiUrl}/routes-by-location?source=${encodeURIComponent(this.searchSource)}&destination=${encodeURIComponent(this.searchDestination)}`;
+      const url = `https://localhost:7219/api/Bus/routes-by-location?source=${encodeURIComponent(this.searchSource)}&destination=${encodeURIComponent(this.searchDestination)}`;
       this.http.get<any[]>(url).subscribe(response => {
         this.filteredRoutes = response;
       }, error => {

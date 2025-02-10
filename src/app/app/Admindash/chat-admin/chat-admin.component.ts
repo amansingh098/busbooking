@@ -20,7 +20,7 @@ export class ChatAdminComponent implements OnInit {
     this.loadMessages();
      setInterval(() => {       //Auto reload
       this.loadMessages();
-    }, 10); // Reload every 1 second (adjust as needed)
+    }, 10000); // Reload every 1 second (adjust as needed)
   }
 
   loadMessages() {

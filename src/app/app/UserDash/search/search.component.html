@@ -65,17 +65,9 @@
       <div class="seat-row">
         <ol class="seats">
           <li class="seat" *ngFor="let seat of allSeats.slice(0, 4)">
-            <input 
-              role="input-passenger-seat" 
-              name="seat" 
-              [id]="'seat-radio-' + seat" 
-              [value]="seat" 
-              type="radio" 
-              [disabled]="bookedSeats.includes(seat)" 
-              (change)="selectSeat(seat)">
-            <label 
-              [for]="'seat-radio-' + seat" 
-              [ngClass]="{
+            <input role="input-passenger-seat" name="seat" [id]="'seat-radio-' + seat" [value]="seat" type="radio"
+              [disabled]="bookedSeats.includes(seat)" (change)="selectSeat(seat)">
+            <label [for]="'seat-radio-' + seat" [ngClass]="{
                 'available-seat': availableSeats.includes(seat),
                 'booked-seat': bookedSeats.includes(seat),
                 'chosen-seat': selectedSeat === seat
@@ -88,17 +80,9 @@
       <div class="seat-row">
         <ol class="seats">
           <li class="seat" *ngFor="let seat of allSeats.slice(4, 8)">
-            <input 
-              role="input-passenger-seat" 
-              name="seat" 
-              [id]="'seat-radio-' + seat" 
-              [value]="seat" 
-              type="radio" 
-              [disabled]="bookedSeats.includes(seat)" 
-              (change)="selectSeat(seat)">
-            <label 
-              [for]="'seat-radio-' + seat" 
-              [ngClass]="{
+            <input role="input-passenger-seat" name="seat" [id]="'seat-radio-' + seat" [value]="seat" type="radio"
+              [disabled]="bookedSeats.includes(seat)" (change)="selectSeat(seat)">
+            <label [for]="'seat-radio-' + seat" [ngClass]="{
                 'available-seat': availableSeats.includes(seat),
                 'booked-seat': bookedSeats.includes(seat),
                 'chosen-seat': selectedSeat === seat
@@ -111,17 +95,9 @@
       <div class="seat-row">
         <ol class="seats">
           <li class="seat" *ngFor="let seat of allSeats.slice(8, 12)">
-            <input 
-              role="input-passenger-seat" 
-              name="seat" 
-              [id]="'seat-radio-' + seat" 
-              [value]="seat" 
-              type="radio" 
-              [disabled]="bookedSeats.includes(seat)" 
-              (change)="selectSeat(seat)">
-            <label 
-              [for]="'seat-radio-' + seat" 
-              [ngClass]="{
+            <input role="input-passenger-seat" name="seat" [id]="'seat-radio-' + seat" [value]="seat" type="radio"
+              [disabled]="bookedSeats.includes(seat)" (change)="selectSeat(seat)">
+            <label [for]="'seat-radio-' + seat" [ngClass]="{
                 'available-seat': availableSeats.includes(seat),
                 'booked-seat': bookedSeats.includes(seat),
                 'chosen-seat': selectedSeat === seat
@@ -134,17 +110,9 @@
       <div class="seat-row">
         <ol class="seats">
           <li class="seat" *ngFor="let seat of allSeats.slice(12)">
-            <input 
-              role="input-passenger-seat" 
-              name="seat" 
-              [id]="'seat-radio-' + seat" 
-              [value]="seat" 
-              type="radio" 
-              [disabled]="bookedSeats.includes(seat)" 
-              (change)="selectSeat(seat)">
-            <label 
-              [for]="'seat-radio-' + seat" 
-              [ngClass]="{
+            <input role="input-passenger-seat" name="seat" [id]="'seat-radio-' + seat" [value]="seat" type="radio"
+              [disabled]="bookedSeats.includes(seat)" (change)="selectSeat(seat)">
+            <label [for]="'seat-radio-' + seat" [ngClass]="{
                 'available-seat': availableSeats.includes(seat),
                 'booked-seat': bookedSeats.includes(seat),
                 'chosen-seat': selectedSeat === seat
@@ -152,10 +120,13 @@
               {{ seat }}
             </label>
           </li>
+         
         </ol>
       </div>
+  
     </div>
     <div class="text-left mt-2">
+     
       <button class="btn btn-primary btn-xs mb-2">Available</button>
       <button class="btn btn-success btn-xs mb-2">Chosen</button>
       <button class="btn btn-danger btn-xs mb-2">Booked</button>

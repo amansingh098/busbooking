@@ -62,10 +62,14 @@
     <div class="grid-item">
       <div class="form-container search-card">
         <h3>Search Route</h3>
+        
+<form>
         <div class="search-container">
-          <input type="text" placeholder="Search by Route ID" [(ngModel)]="searchTerm">
-          <button class="btn btn-secondary" (click)="searchRouteById()">Search by ID</button>
+      
+          <input type="text" placeholder="Search by Route ID" name="routeId" [(ngModel)]="route.routeId">
+          <button class="btn btn-secondary" (click)="searchRouteById(route.routeId)">Search by ID</button>
         </div>
+      </form>
         <div class="search-container">
           <input type="text" placeholder="Source" [(ngModel)]="searchSource">
           <input type="text" placeholder="Destination" [(ngModel)]="searchDestination">
