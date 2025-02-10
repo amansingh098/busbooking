@@ -44,7 +44,7 @@ export const routes: Routes = [
     {path:'',component:SearchComponent},
     {path:'bookings',component:BookingsComponent},
     {
-      path:'find/chatuser',component:ChatUserComponent
+      path:'chatuser',component:ChatUserComponent
     }
 
   ]}
