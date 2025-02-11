@@ -23,7 +23,11 @@
                         <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
                             <div class="mb-3">
                                 <label for="fullName" class="form-label">Full Name</label>
-                                <input type="text" class="form-control" id="fullName" [(ngModel)]="user.name" name="name" placeholder="Enter your full name" required>
+                                <input type="text" class="form-control" id="fullName" [(ngModel)]="user.name" name="name" placeholder="Enter your full name" required minlength ="4"  >
+                                <div *ngIf="registerForm.controls['name']?.invalid && (registerForm.controls['name']?.dirty || registerForm.controls['name']?.touched) ">
+                                    <small class="text-danger" * ngIf="registerForm.controls['name']?.errors?.['required']">please enter the name</small>
+                                    <small class="text-danger" *ngIf="registerForm.controls['name']?.errors?.['minlength']">Username must be at least 4 characters long.</small>
+                                </div>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email address</label>
